@@ -1,0 +1,1535 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>متجر لمحة - نظارات فاخرة</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+        body {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Tajawal', sans-serif;
+            background: #ffffff;
+            color: #000000;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(3, 109, 89, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 50px;
+            z-index: 1000;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+            animation: slideDown 0.8s ease-out;
+        }
+
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.8em;
+            font-weight: 800;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: #ffffff;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            transform: translateY(-2px);
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #036d59 0%, #053531 100%);
+            min-height: 100%;
+            padding: 140px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .shape {
+            position: absolute;
+            opacity: 0.15;
+        }
+
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #158b7a, #036d59);
+            border-radius: 50%;
+            top: -100px;
+            right: -50px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .shape-2 {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(45deg, #158b7a, #053531);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            bottom: 100px;
+            left: 50px;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        .shape-3 {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(225deg, #158b7a, #036d59);
+            border-radius: 50%;
+            top: 50%;
+            right: 100px;
+            animation: float 7s ease-in-out infinite;
+        }
+
+        .shape-4 {
+            width: 250px;
+            height: 250px;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            bottom: -80px;
+            right: 200px;
+            animation: rotate 20s linear infinite;
+        }
+
+        .shape-5 {
+            width: 180px;
+            height: 180px;
+            background: linear-gradient(315deg, #158b7a, #053531);
+            border-radius: 40% 60% 60% 40% / 60% 40% 60% 40%;
+            top: 200px;
+            left: 100px;
+            animation: float 9s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-30px) rotate(10deg);
+            }
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo-title {
+            font-size: 4em;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .tagline {
+            font-size: 2em;
+            color: #ffffff;
+            margin-bottom: 40px;
+            font-weight: 300;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            padding: 35px;
+            border-radius: 25px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            transform: scale(0);
+            transition: transform 0.6s ease;
+        }
+
+        .feature-card:hover::before {
+            transform: scale(1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .feature-title {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .feature-desc {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1em;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #158b7a;
+            color: #ffffff;
+            padding: 20px 60px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.4em;
+            font-weight: 700;
+            margin-top: 30px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(21, 139, 122, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+
+        .cta-button:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .cta-button:hover {
+            background: #036d59;
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(21, 139, 122, 0.7);
+        }
+
+        .cta-button:active {
+            transform: translateY(-2px) scale(1.02);
+        }
+
+        .section {
+            width: 100%;
+            padding: 80px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3em;
+            font-weight: 800;
+            color: #036d59;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            animation: fadeInScale 1s ease-out;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 5px;
+            background: linear-gradient(90deg, #158b7a, #036d59);
+            border-radius: 3px;
+            animation: expandWidth 1s ease-out 0.3s both;
+        }
+
+        .section-title i {
+            margin-left: 15px;
+            color: #158b7a;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes expandWidth {
+            from {
+                width: 0;
+            }
+            to {
+                width: 120px;
+            }
+        }
+
+        @keyframes sparkle {
+            0%, 100% {
+                opacity: 1;
+                transform: translateY(-50%) scale(1);
+            }
+            50% {
+                opacity: 0.5;
+                transform: translateY(-50%) scale(1.3);
+            }
+        }
+
+        .about-content {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            padding: 60px;
+            border-radius: 30px;
+            margin-top: 40px;
+            box-shadow: 0 10px 40px rgba(3, 109, 89, 0.1);
+        }
+
+        .about-text {
+            font-size: 1.4em;
+            line-height: 2;
+            color: #053531;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .customer-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .customer-card {
+            position: relative;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(3, 109, 89, 0.2);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            padding: 30px;
+            text-align: center;
+            border: 2px solid transparent;
+        }
+
+        .customer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(21, 139, 122, 0.1), rgba(3, 109, 89, 0.1));
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .customer-card:hover::before {
+            opacity: 1;
+        }
+
+        .customer-card:hover {
+            transform: translateY(-15px) scale(1.08);
+            box-shadow: 0 25px 60px rgba(3, 109, 89, 0.3);
+            border-color: #158b7a;
+        }
+
+        .customer-emoji {
+            font-size: 8em;
+            margin: 20px 0;
+            transition: transform 0.5s ease;
+            display: inline-block;
+        }
+
+        .customer-card:hover .customer-emoji {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        .customer-name {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #036d59;
+            margin-bottom: 10px;
+        }
+
+        .customer-comment {
+            font-size: 1em;
+            color: #053531;
+            font-style: italic;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .testimonial-card {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(3, 109, 89, 0.15);
+            border-right: 5px solid #158b7a;
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateX(-10px);
+        }
+
+        .testimonial-stars {
+            color: #ffc107;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-text {
+            font-size: 1.2em;
+            color: #053531;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: #036d59;
+            font-size: 1.1em;
+        }
+
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .why-card {
+            background: linear-gradient(135deg, #036d59 0%, #053531 100%);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            color: #ffffff;
+            transition: transform 0.3s ease;
+        }
+
+        .why-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .why-icon {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+        }
+
+        .why-title {
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .why-desc {
+            font-size: 1.1em;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .product-card {
+            background: #ffffff;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(3, 109, 89, 0.15);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid transparent;
+            position: relative;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(21, 139, 122, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: 1;
+        }
+
+        .product-card:hover::before {
+            opacity: 1;
+        }
+
+        .product-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 25px 60px rgba(3, 109, 89, 0.25);
+            border-color: #158b7a;
+        }
+
+        .product-image-container {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            padding: 50px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image {
+            font-size: 8em;
+            transition: transform 0.5s ease;
+            display: inline-block;
+            position: relative;
+            z-index: 2;
+        }
+
+        .product-image-real {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: transform 0.5s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.15) rotate(-5deg);
+        }
+
+        .product-card:hover .product-image-real {
+            transform: scale(1.1);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #036d59, #158b7a);
+            color: #ffffff;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9em;
+            z-index: 3;
+            box-shadow: 0 5px 15px rgba(3, 109, 89, 0.3);
+        }
+
+        .product-info {
+            padding: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .product-name {
+            font-size: 1.6em;
+            font-weight: 800;
+            color: #036d59;
+            margin-bottom: 15px;
+        }
+
+        .product-description {
+            font-size: 1.1em;
+            color: #053531;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .product-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .product-feature-tag {
+            background: rgba(21, 139, 122, 0.1);
+            color: #036d59;
+            padding: 6px 15px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+
+        .product-price {
+            font-size: 2em;
+            font-weight: 800;
+            color: #158b7a;
+            margin-bottom: 20px;
+        }
+
+        .product-button {
+            width: 100%;
+            background: linear-gradient(135deg, #158b7a, #036d59);
+            color: #ffffff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+
+        .product-button:hover::before {
+            width: 400px;
+            height: 400px;
+        }
+
+        .product-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(21, 139, 122, 0.4);
+        }
+
+        .product-button:active {
+            transform: translateY(-1px);
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #036d59 0%, #158b7a 100%);
+            padding: 80px 20px;
+            text-align: center;
+            margin-top: 80px;
+            width: 100%;
+        }
+
+        .contact-title {
+            font-size: 3em;
+            color: #ffffff;
+            font-weight: 800;
+            margin-bottom: 40px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .contact-item {
+            text-align: center;
+        }
+
+        .contact-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .contact-text {
+            font-size: 1.5em;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .social-button {
+            display: inline-block;
+            background: #ffffff;
+            color: #036d59;
+            padding: 18px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.3em;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+
+        .social-button:hover {
+            background: #158b7a;
+            color: #ffffff;
+            transform: translateY(-3px);
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            z-index: 1001;
+            padding: 10px;
+        }
+
+        .menu-toggle span {
+            width: 30px;
+            height: 3px;
+            background: #ffffff;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translateY(12px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translateY(-12px);
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 280px;
+            height: 100%;
+            background: linear-gradient(135deg, #036d59 0%, #053531 100%);
+            box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+            transition: right 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            padding-top: 80px;
+        }
+
+        .sidebar.active {
+            right: 0;
+        }
+
+        .sidebar-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar-links li {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .sidebar-links a {
+            display: block;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 20px 30px;
+            font-size: 1.2em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .sidebar-links a::before {
+            content: '◀';
+            position: absolute;
+            right: 30px;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-links a:hover {
+            background: rgba(255, 255, 255, 0.1);
+            padding-right: 50px;
+        }
+
+        .sidebar-links a:hover::before {
+            opacity: 1;
+            right: 20px;
+        }
+
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 998;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .logo-title {
+                font-size: 2.5em;
+            }
+
+            .tagline {
+                font-size: 1.3em;
+            }
+
+            .section-title {
+                font-size: 2em;
+            }
+
+            .about-content {
+                padding: 30px 20px;
+            }
+
+            .about-text {
+                font-size: 1.1em;
+            }
+
+            .contact-info {
+                gap: 30px;
+            }
+
+            .shape {
+                display: none;
+            }
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body><!-- Sidebar Overlay -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div><!-- Sidebar Menu -->
+  <div class="sidebar" id="sidebar">
+   <ul class="sidebar-links">
+    <li><a href="#home" class="sidebar-link"><i class="fas fa-home"></i> الرئيسية</a></li>
+    <li><a href="#about" class="sidebar-link"><i class="fas fa-info-circle"></i> من نحن</a></li>
+    <li><a href="#products" class="sidebar-link"><i class="fas fa-glasses"></i> منتجاتنا</a></li>
+    <li><a href="#customers" class="sidebar-link"><i class="fas fa-users"></i> عملاؤنا</a></li>
+    <li><a href="#testimonials" class="sidebar-link"><i class="fas fa-star"></i> التعليقات</a></li>
+    <li><a href="#why" class="sidebar-link"><i class="fas fa-award"></i> لماذا لمحة</a></li>
+    <li><a href="#contact" class="sidebar-link"><i class="fas fa-phone-alt"></i> تواصل معنا</a></li>
+   </ul>
+  </div><!-- Navigation Bar -->
+  <nav class="navbar">
+   <div class="nav-content"><a href="#home" class="nav-logo"><i class="fas fa-glasses"></i> لمحة</a>
+    <ul class="nav-links">
+     <li><a href="#home"><i class="fas fa-home"></i> الرئيسية</a></li>
+     <li><a href="#about"><i class="fas fa-info-circle"></i> من نحن</a></li>
+     <li><a href="#products"><i class="fas fa-store"></i> منتجاتنا</a></li>
+     <li><a href="#customers"><i class="fas fa-users"></i> عملاؤنا</a></li>
+     <li><a href="#testimonials"><i class="fas fa-star"></i> التعليقات</a></li>
+     <li><a href="#why"><i class="fas fa-lightbulb"></i> لماذا لمحة</a></li>
+     <li><a href="#contact"><i class="fas fa-phone"></i> تواصل معنا</a></li>
+    </ul>
+    <div class="menu-toggle" id="menuToggle"><span></span> <span></span> <span></span>
+    </div>
+   </div>
+  </nav>
+  <div class="hero-section" id="home">
+   <div class="floating-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+    <div class="shape shape-4"></div>
+    <div class="shape shape-5"></div>
+   </div>
+   <div class="hero-content">
+    <h1 class="logo-title" id="storeName"><i class="fas fa-glasses"></i> متجر لمحه</h1>
+    <p class="tagline" id="heroTagline">رؤيتك.. أناقتك.. بلمحة واحدة</p>
+    <div class="features-grid">
+     <div class="feature-card">
+      <div class="feature-icon">
+       🕶️
+      </div>
+      <div class="feature-title">
+       نظارات ماركات فاخرة
+      </div>
+      <div class="feature-desc">
+       تشكيلة واسعة من أرقى الماركات العالمية
+      </div>
+     </div>
+     <div class="feature-card">
+      <div class="feature-icon">
+       ✦
+      </div>
+      <div class="feature-title">
+       جودة عالية
+      </div>
+      <div class="feature-desc">
+       ماستر كواليتي - عدسات أ��لية وتفاصيل دقيقة
+      </div>
+     </div>
+     <div class="feature-card">
+      <div class="feature-icon">
+       🌍
+      </div>
+      <div class="feature-title">
+       توصيل سريع
+      </div>
+      <div class="feature-desc">
+       ت��صيل فوري داخل صنعاء وباقي المحافظات اليمنية
+      </div>
+     </div>
+    </div><a href="#contact" class="cta-button"><i class="fas fa-shopping-cart"></i> اطلب نظارتك الآن</a>
+   </div>
+  </div>
+  <div class="section" id="about">
+   <h2 class="section-title">من نحن</h2>
+   <div class="about-content">
+    <p class="about-text">نحن <strong>لمحة</strong>.. أكثر من مجرد متجر ��ظارات</p>
+    <p class="about-text">نحن رؤية مختلفة.. لم��ة أناقة وجودة تستحقها عيونك</p>
+    <p class="about-text">متخصصون في تقديم نظارات هاي كواليتي.. بعناية نختار التصاميم الأنيقة والعدسات الأصلية ونوصلها لك أينما كنت في اليمن</p>
+    <p class="about-text" style="font-weight: 700; font-size: 1.5em; color: #036d59;">في لمحة.. نؤمن أن النظار�� مش بس لحماية عيونك<br>
+      بل هي توقيعك الخاص ولمحتك اللي تميزك ✨</p>
+   </div>
+  </div>
+  <div class="section" id="products">
+   <h2 class="section-title"><i class="fas fa-glasses"></i> نظاراتنا المميزة</h2>
+   <div class="products-grid">
+    <div class="product-card">
+     <div class="product-image-container">
+      <div class="product-badge">
+       الأكثر مبيعاً
+      </div><img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400&amp;h=300&amp;fit=crop" alt="نظارة كلاسيك برو" class="product-image-real" onerror="this.style.display='none'; this.parentElement.innerHTML += '<div class=\'product-image\'>😎</div>';">
+     </div>
+     <div class="product-info">
+      <h3 class="product-name">نظارة كلاسيك برو</h3>
+      <p class="product-description">تصميم كلاسيكي أنيق يناسب جميع الأوقات والمناسبات</p>
+      <div class="product-features"><span class="product-feature-tag">✓ عدسات UV400</span> <span class="product-feature-tag">✓ إطار معدني</span> <span class="product-feature-tag">✓ مضادة للخدش</span>
+      </div>
+      <div class="product-price">
+       15,000 ر.ي
+      </div><button class="product-button" onclick="orderProduct('نظارة كلاسيك برو')">اطلب الآن 🛒</button>
+     </div>
+    </div>
+    <div class="product-card">
+     <div class="product-image-container">
+      <div class="product-badge">
+       جديد
+      </div><img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=400&amp;h=300&amp;fit=crop" alt="نظارة سبورت اكتيف" class="product-image-real" onerror="this.style.display='none'; this.parentElement.innerHTML += '<div class=\'product-image\'>🕶️</div>';">
+     </div>
+     <div class="product-info">
+      <h3 class="product-name">نظارة سبورت اكتيف</h3>
+      <p class="product-description">مثالية للرياضة والأنشطة الخارجية بتقنية ������اومة الصدمات</p>
+      <div class="product-features"><span class="product-feature-tag">✓ مرنة وخفيفة</span> <span class="product-feature-tag">✓ مضادة للماء</span> <span class="product-feature-tag">✓ عدسات بولارايزد</span>
+      </div>
+      <div class="product-price">
+       18,000 ر.ي
+      </div><button class="product-button" onclick="orderProduct('نظارة سبورت اكتيف')">اطلب الآن 🛒</button>
+     </div>
+    </div>
+    <div class="product-card">
+     <div class="product-image-container">
+      <div class="product-badge">
+       عرض خاص
+      </div><img src="https://images.unsplash.com/photo-1574258495973-f010dfbb5371?w=400&amp;h=300&amp;fit=crop" alt="نظارة طبية فاشن" class="product-image-real" onerror="this.style.display='none'; this.parentElement.innerHTML += '<div class=\'product-image\'>👓</div>';">
+     </div>
+     <div class="product-info">
+      <h3 class="product-name">��ظار����� طبية فاشن</h3>
+      <p class="product-description">أناقة وراحة مع إطارات عصرية للاستخدام اليومي</p>
+      <div class="product-features"><span class="product-feature-tag">✓ إطار بلاستيكي</span> <span class="product-feature-tag">✓ مضادة للضوء الأزرق</span> <span class="product-feature-tag">✓ خفيفة جداً</span>
+      </div>
+      <div class="product-price">
+       12,000 ر.ي
+      </div><button class="product-button" onclick="orderProduct('نظارة طبية فاشن')">اطلب الآن 🛒</button>
+     </div>
+    </div>
+    <div class="product-card">
+     <div class="product-image-container">
+      <div class="product-badge">
+       VIP
+      </div><img src="https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=400&amp;h=300&amp;fit=crop" alt="نظارة بريميوم لوكس" class="product-image-real" onerror="this.style.display='none'; this.parentElement.innerHTML += '<div class=\'product-image\'>🤓</div>';">
+     </div>
+     <div class="product-info">
+      <h3 class="product-name">نظارة بريميوم لوكس</h3>
+      <p class="product-description">الفخامة في أبهى صورها مع تصميم حصري وجودة استثنائية</p>
+      <div class="product-features"><span class="product-feature-tag">✓ تيتانيوم خالص</span> <span class="product-feature-tag">✓ عدسات كريستال</span> <span class="product-feature-tag">✓ تصميم إيطالي</span>
+      </div>
+      <div class="product-price">
+       25,000 ر.ي
+      </div><button class="product-button" onclick="orderProduct('نظارة بريميوم لوكس')">اطلب ال��ن 🛒</button>
+     </div>
+    </div>
+    <div class="product-card">
+     <div class="product-image-container">
+      <div class="product-badge">
+       تخفيض 20%
+      </div><img src="https://images.unsplash.com/photo-1577803645773-f96470509666?w=400&amp;h=300&amp;fit=crop" alt="نظارة رترو ستايل" class="product-image-real" onerror="this.style.display='none'; this.parentElement.innerHTML += '<div class=\'product-image\'>😎</div>';">
+     </div>
+     <div class="product-info">
+      <h3 class="product-name">نظارة رترو ستايل</h3>
+      <p class="product-description">عودة الكلاسيكيات بلمسة عصرية تناسب عشاق الموضة</p>
+      <div class="product-features"><span class="product-feature-tag">✓ تصميم عتيق</span> <span class="product-feature-tag">✓ ألوان متعددة</span> <span class="product-feature-tag">✓ عدسات ملونة</span>
+      </div>
+      <div class="product-price">
+       14,000 ر.ي
+      </div><button class="product-button" onclick="orderProduct('نظارة رترو ستايل')">اطلب الآن ����</button>
+     </div>
+    </div>
+    <div class="product-card">
+     <div class="product-image-container">
+      <div class="product-badge">
+       حصري
+      </div><img src="https://images.unsplash.com/photo-1509695507497-903c140c43b0?w=400&amp;h=300&amp;fit=crop" alt="نظارة إيليت بزنس" class="product-image-real" onerror="this.style.display='none'; this.parentElement.innerHTML += '<div class=\'product-image\'>🕶️</div>';">
+     </div>
+     <div class="product-info">
+      <h3 class="product-name">نظارة إيليت بزنس</h3>
+      <p class="product-description">الاختيار الأمثل لرجال الأعمال والمظهر الرسمي الأنيق</p>
+      <div class="product-features"><span class="product-feature-tag">✓ تصميم ��اقي</span> <span class="product-feature-tag">✓ إطار ستانلس</span> <span class="product-feature-tag">✓ مضادة للانعكاس</span>
+      </div>
+      <div class="product-price">
+       20,000 ر.ي
+      </div><button class="product-button" onclick="orderProduct('نظارة إيليت بزنس')">اطلب الآن 🛒</button>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="section" id="customers" style="background: linear-gradient(to bottom, #ffffff, #f8f9fa);">
+   <h2 class="section-title"><i class="fas fa-users"></i> عملاؤنا السعداء</h2>
+   <div class="customer-gallery">
+    <div class="customer-card">
+     <div class="customer-emoji">
+      😎
+     </div>
+     <div class="customer-name">
+      أحمد العامري
+     </div>
+     <div class="customer-comment">
+      "نظارة ����عة والجودة ممتازة!"
+     </div>
+    </div>
+    <div class="customer-card">
+     <div class="customer-emoji">
+      🕶️
+     </div>
+     <div class="customer-name">
+      سارة المحمدي
+     </div>
+     <div class="customer-comment">
+      "أناقة وجودة.. شكراً لمحة"
+     </div>
+    </div>
+    <div class="customer-card">
+     <div class="customer-emoji">
+      👓
+     </div>
+     <div class="customer-name">
+      محمد الشامي
+     </div>
+     <div class="customer-comment">
+      "توصيل سريع وتغليف راقي"
+     </div>
+    </div>
+    <div class="customer-card">
+     <div class="customer-emoji">
+      🤓
+     </div>
+     <div class="customer-name">
+      فاطمة علي
+     </div>
+     <div class="customer-comment">
+      "ن��ارتي المفضلة بجودة عالية"
+     </div>
+    </div>
+    <div class="customer-card">
+     <div class="customer-emoji">
+      😎
+     </div>
+     <div class="customer-name">
+      خالد السالمي
+     </div>
+     <div class="customer-comment">
+      "تجربة مميزة وخدمة رائعة"
+     </div>
+    </div>
+    <div class="customer-card">
+     <div class="customer-emoji">
+      🕶️
+     </div>
+     <div class="customer-name">
+      نور الدين
+     </div>
+     <div class="customer-comment">
+      "أفضل متجر نظارات في اليمن"
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="section" id="testimonials">
+   <h2 class="section-title"><i class="fas fa-comments"></i> تعليقات عملائنا</h2>
+   <div class="testimonials-grid">
+    <div class="testimonial-card">
+     <div class="testimonial-stars">
+      ⭐⭐⭐⭐⭐
+     </div>
+     <p class="testimonial-text">"والله نظارة خيالية! الجودة فوق التو��عا�� والسعر ممتاز. التوصيل كان سريع جداً والتغليف ��حترافي. شكراً لمحة على الخدمة المميزة!"</p>
+     <div class="testimonial-author">
+      - عبدالله الحميري
+     </div>
+    </div>
+    <div class="testimonial-card">
+     <div class="testimonial-stars">
+      ⭐⭐⭐⭐⭐
+     </div>
+     <p class="testimonial-text">"أول مرة أطلب نظارة أونلا��ن وكانت تجربة رائعة! النظارة ��اتني بحالة ممتازة والعدسات فعلاً أصلية. ما توقعت الجودة تكون بهذا المستوى"</p>
+     <div class="testimonial-author">
+      - منى الزبيري
+     </div>
+    </div>
+    <div class="testimonial-card">
+     <div class="testimonial-stars">
+      ⭐⭐⭐⭐⭐
+     </div>
+     <p class="testimonial-text">"متجر لمحة الأفضل! طلب�� نظارتين وكلهم روعة. التصاميم عصرية وأنيقة، والأهم الجودة العالية. التعامل راقي جداً وفيه هدايا ��ع كل طلب"</p>
+     <div class="testimonial-author">
+      - ياسر المقطري
+     </div>
+    </div>
+    <div class="testimonial-card">
+     <div class="testimonial-stars">
+      ⭐⭐⭐⭐⭐
+     </div>
+     <p class="testimonial-text">"صراحة فا��ت توقعاتي! النظارة جميلة جداً وتناسب وجهي تماماً. الخدمة ممتازة والرد على الاستفسارات سريع. أنصح الجميع بالتعامل معهم"</p>
+     <div class="testimonial-author">
+      - ريم العولقي
+     </div>
+    </div>
+    <div class="testimonial-card">
+     <div class="testimonial-stars">
+      ⭐⭐⭐⭐⭐
+     </div>
+     <p class="testimonial-text">"تجربة مميزة من البداية ل��نهاية! النظارة وصلت بسرعة والتغليف احترافي جداً. الجودة هاي كواليتي فعلاً مش كلام. شكراً لمحة ❤️"</p>
+     <div class="testimonial-author">
+      - سل��ان الحداد
+     </div>
+    </div>
+    <div class="testimonial-card">
+     <div class="testimonial-stars">
+      ⭐⭐⭐⭐⭐
+     </div>
+     <p class="testimonial-text">"أ��ضل متجر نظارا�� جربته! الأسعار معقولة والجودة ممتازة. النظارة مريحة جداً وتحمي عيني من الشمس بشكل رائع. متجر موثوق 100%"</p>
+     <div class="testimonial-author">
+      - هدى المؤيد
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="section" id="why" style="background: #f8f9fa;">
+   <h2 class="section-title"><i class="fas fa-award"></i> لماذا لمحة؟</h2>
+   <div class="why-us-grid">
+    <div class="why-card">
+     <div class="why-icon">
+      💎
+     </div>
+     <div class="why-title">
+      جودة ممتازة
+     </div>
+     <div class="why-desc">
+      نظاراتنا مصنفة هاي كواليتي بتفاصيل دق����ة وعدسات تحافظ على عينيك
+     </div>
+    </div>
+    <div class="why-card">
+     <div class="why-icon">
+      🇾🇪
+     </div>
+     <div class="why-title">
+      متخصصون في السوق اليمني
+     </div>
+     <div class="why-desc">
+      نعرف ذوقك.. نعرف احتياجك.. ونوفر لك نظارات تناسبك فعلاً
+     </div>
+    </div>
+    <div class="why-card">
+     <div class="why-icon">
+      🚀
+     </div>
+     <div class="why-title">
+      شحن سريع وآمن
+     </div>
+     <div class="why-desc">
+      نوصل لأي مدينة في اليمن خلال وقت قياسي وبحماية كاملة للمنتج
+     </div>
+    </div>
+    <div class="why-card">
+     <div class="why-icon">
+      🎁
+     </div>
+     <div class="why-title">
+      ��دم�� مميزة وهدايا حصرية
+     </div>
+     <div class="why-desc">
+      كل طلب يوصلك بطريقة أنيقة ومميزة مع هدايا حصرية
+     </div>
+    </div>
+    <div class="why-card">
+     <div class="why-icon">
+      💰
+     </div>
+     <div class="why-title">
+      أسعار مناسبة جداً
+     </div>
+     <div class="why-desc">
+      أسعار تنافسية مع خصومات دائمة وعروض مستمرة
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="contact-section" id="contact">
+   <h2 class="contact-title"><i class="fas fa-phone-alt"></i> تواصل معنا</h2>
+   <div class="contact-info">
+    <div class="contact-item">
+     <div class="contact-icon">
+      <i class="fas fa-mobile-alt"></i>
+     </div>
+     <div class="contact-text" id="phoneNumber">
+      774379000
+     </div>
+    </div>
+    <div class="contact-item">
+     <div class="contact-icon">
+      <i class="fas fa-map-marker-alt"></i>
+     </div>
+     <div class="contact-text">
+      صنعاء - اليمن
+     </div>
+    </div>
+   </div><a href="https://www.instagram.com/_lamhah/" target="_blank" rel="noopener noreferrer" class="social-button" id="instagramLink"> <i class="fab fa-instagram"></i> تابعنا على الانستجرام </a> <a href="tel:774379000" class="social-button"> <i class="fas fa-phone"></i> اتصل بنا الآن </a>
+  </div>
+  <script>
+        const defaultConfig = {
+            store_name: "متجر لمحه✨",
+            hero_tagline: "رؤيتك.. أناقتك.. بلمحة واحدة",
+            phone_number: "774379000",
+            instagram_url: "https://www.instagram.com/_lamhah/",
+            background_color: "#036d59",
+            secondary_surface_color: "#053531",
+            text_color: "#000000",
+            primary_action_color: "#158b7a",
+            secondary_action_color: "#ffffff"
+        };
+
+        async function onConfigChange(config) {
+            const storeName = config.store_name || defaultConfig.store_name;
+            const heroTagline = config.hero_tagline || defaultConfig.hero_tagline;
+            const phoneNumber = config.phone_number || defaultConfig.phone_number;
+            const instagramUrl = config.instagram_url || defaultConfig.instagram_url;
+            
+            const backgroundColor = config.background_color || defaultConfig.background_color;
+            const secondarySurface = config.secondary_surface_color || defaultConfig.secondary_surface_color;
+            const textColor = config.text_color || defaultConfig.text_color;
+            const primaryAction = config.primary_action_color || defaultConfig.primary_action_color;
+            const secondaryAction = config.secondary_action_color || defaultConfig.secondary_action_color;
+
+            document.getElementById('storeName').textContent = storeName;
+            document.getElementById('heroTagline').textContent = heroTagline;
+            document.getElementById('phoneNumber').textContent = phoneNumber;
+            
+            const instagramLink = document.getElementById('instagramLink');
+            instagramLink.href = instagramUrl;
+
+            const heroSection = document.querySelector('.hero-section');
+            heroSection.style.background = `linear-gradient(135deg, ${backgroundColor} 0%, ${secondarySurface} 100%)`;
+
+            const contactSection = document.querySelector('.contact-section');
+            contactSection.style.background = `linear-gradient(135deg, ${backgroundColor} 0%, ${primaryAction} 100%)`;
+
+            const whyCards = document.querySelectorAll('.why-card');
+            whyCards.forEach(card => {
+                card.style.background = `linear-gradient(135deg, ${backgroundColor} 0%, ${secondarySurface} 100%)`;
+            });
+
+            const sectionTitles = document.querySelectorAll('.section-title');
+            sectionTitles.forEach(title => {
+                title.style.color = backgroundColor;
+            });
+
+            const ctaButton = document.querySelector('.cta-button');
+            ctaButton.style.background = primaryAction;
+            ctaButton.addEventListener('mouseenter', () => {
+                ctaButton.style.background = backgroundColor;
+            });
+            ctaButton.addEventListener('mouseleave', () => {
+                ctaButton.style.background = primaryAction;
+            });
+
+            const socialButtons = document.querySelectorAll('.social-button');
+            socialButtons.forEach(button => {
+                button.style.background = secondaryAction;
+                button.style.color = backgroundColor;
+                button.addEventListener('mouseenter', () => {
+                    button.style.background = primaryAction;
+                    button.style.color = secondaryAction;
+                });
+                button.addEventListener('mouseleave', () => {
+                    button.style.background = secondaryAction;
+                    button.style.color = backgroundColor;
+                });
+            });
+
+            const testimonialCards = document.querySelectorAll('.testimonial-card');
+            testimonialCards.forEach(card => {
+                card.style.borderRightColor = primaryAction;
+            });
+
+            document.body.style.color = textColor;
+        }
+
+        function mapToCapabilities(config) {
+            return {
+                recolorables: [
+                    {
+                        get: () => config.background_color || defaultConfig.background_color,
+                        set: (value) => {
+                            config.background_color = value;
+                            window.elementSdk.setConfig({ background_color: value });
+                        }
+                    },
+                    {
+                        get: () => config.secondary_surface_color || defaultConfig.secondary_surface_color,
+                        set: (value) => {
+                            config.secondary_surface_color = value;
+                            window.elementSdk.setConfig({ secondary_surface_color: value });
+                        }
+                    },
+                    {
+                        get: () => config.text_color || defaultConfig.text_color,
+                        set: (value) => {
+                            config.text_color = value;
+                            window.elementSdk.setConfig({ text_color: value });
+                        }
+                    },
+                    {
+                        get: () => config.primary_action_color || defaultConfig.primary_action_color,
+                        set: (value) => {
+                            config.primary_action_color = value;
+                            window.elementSdk.setConfig({ primary_action_color: value });
+                        }
+                    },
+                    {
+                        get: () => config.secondary_action_color || defaultConfig.secondary_action_color,
+                        set: (value) => {
+                            config.secondary_action_color = value;
+                            window.elementSdk.setConfig({ secondary_action_color: value });
+                        }
+                    }
+                ],
+                borderables: [],
+                fontEditable: undefined,
+                fontSizeable: undefined
+            };
+        }
+
+        function mapToEditPanelValues(config) {
+            return new Map([
+                ["store_name", config.store_name || defaultConfig.store_name],
+                ["hero_tagline", config.hero_tagline || defaultConfig.hero_tagline],
+                ["phone_number", config.phone_number || defaultConfig.phone_number],
+                ["instagram_url", config.instagram_url || defaultConfig.instagram_url]
+            ]);
+        }
+
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig,
+                onConfigChange,
+                mapToCapabilities,
+                mapToEditPanelValues
+            });
+        }
+
+        // Function to handle product orders
+        function orderProduct(productName) {
+            const phoneNumber = document.getElementById('phoneNumber').textContent || '774379000';
+            const message = `مرحباً! 👋\nأريد طلب ${productName} من متجر لمحة\n\nأرجو التواصل معي لإتمام الطلب 🕶️✨`;
+            const whatsappUrl = `https://wa.me/967${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+        }
+
+        // Sidebar menu functionality
+        const menuToggle = document.getElementById('menuToggle');
+        const sidebar = document.getElementById('sidebar');
+        const sidebarOverlay = document.getElementById('sidebarOverlay');
+        const sidebarLinks = document.querySelectorAll('.sidebar-link');
+
+        function openSidebar() {
+            sidebar.classList.add('active');
+            sidebarOverlay.classList.add('active');
+            menuToggle.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeSidebar() {
+            sidebar.classList.remove('active');
+            sidebarOverlay.classList.remove('active');
+            menuToggle.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        menuToggle.addEventListener('click', () => {
+            if (sidebar.classList.contains('active')) {
+                closeSidebar();
+            } else {
+                openSidebar();
+            }
+        });
+
+        sidebarOverlay.addEventListener('click', closeSidebar);
+
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                closeSidebar();
+            });
+        });
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a5cce6cc2301d43',t:'MTc2NDM2Mzc0Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
